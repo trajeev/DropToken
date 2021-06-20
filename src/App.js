@@ -1,24 +1,18 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Board from './components/board/board'
+// import axios from 'axios'
 
 function App() {
+
+  // useEffect(() => {
+  //   axios.get('https://w0ayb2ph1k.execute-api.us-west-2.amazonaws.com/production')
+  //     .then(res => console.log(res.data))
+  //     .catch(err => console.log(err))
+  // },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Board />
   );
 }
 

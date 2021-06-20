@@ -1,0 +1,15 @@
+.Board {
+    height: 40vh;
+    width: 40vh;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 30vh;
+    display: grid;
+    grid-template-rows: repeat(4, 9vh);
+    grid-template-columns: repeat(4, 9vh);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: rgb(245, 241, 241);
+  }
