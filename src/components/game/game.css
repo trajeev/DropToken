@@ -1,0 +1,17 @@
+.game {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    height: 2rem;
+    width: 5rem;
+    margin: auto;
+    
+}
+
+.text {
+    margin: auto;
+    display: inline-block;
+}
