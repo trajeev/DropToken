@@ -15,3 +15,11 @@
     margin: auto;
     display: inline-block;
 }
+
+.buttons {
+    margin: auto;
+}
+
+button {
+    margin-left: 10px;
+}

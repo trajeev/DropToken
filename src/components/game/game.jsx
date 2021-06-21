@@ -6,14 +6,14 @@ import axios from 'axios'
 
 const Game = () => {
     const [markedArray, setArray] = useState(Array(16).fill(null))
-    const [nextPlayer, setPlayer] = useState(true)
+    const [userFirst, setPlayer] = useState(true)
     const prevMoves = useRef([])
 
     useEffect(() => {
-        axios.get(`https://w0ayb2ph1k.execute-api.us-west-2.amazonaws.com/production?moves=[${prevMoves.current}]`)
+        if (!userFirst)
+        {axios.get(`https://w0ayb2ph1k.execute-api.us-west-2.amazonaws.com/production?moves=[${prevMoves.current}]`)
             .then(res => {
                 const moves = res.data
-                console.log('moves',moves)
                 const lastMove = moves[moves.length - 1]
                 const squares = [...markedArray]
                 const validComputerMove = computerMove(squares, lastMove)
@@ -21,9 +21,9 @@ const Game = () => {
                 squares[validComputerMove] = '-pink'
                 setArray(squares)
                 prevMoves.current = [...prevMoves.current, lastMove]
-                console.log('prevMoves',prevMoves.current)
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err))}
+            // eslint-disable-next-line
     },[prevMoves.current])
     
     const winner = calculateWinner(markedArray)
@@ -36,11 +36,10 @@ const Game = () => {
         const squares = [...markedArray]
         if (validityFunction(squares, point)) {
             if (calculateWinner(squares) || squares[point]) return
+            if (userFirst) setPlayer(false)
             squares[point] = '-blue'
             setArray(squares)
-            setPlayer(!nextPlayer)
             prevMoves.current = [...prevMoves.current, point%4]
-            console.log(prevMoves.current)
         }
     }
 
@@ -48,6 +47,17 @@ const Game = () => {
         const newGame = Array(16).fill(null)
         setArray(newGame)
         prevMoves.current = []
+        setPlayer(true)
+    }
+
+    const playerFirst = () => {
+        setPlayer(true)
+        console.log(userFirst)
+    }
+
+    const computerFirst = () => {
+        setPlayer(userFirst => false)
+        console.log(userFirst)
     }
 
     return ( 
@@ -56,6 +66,10 @@ const Game = () => {
                 (i) => handleClick(i)} 
                 markedArray = {markedArray} />
             <button onClick = {restart} className = "button">Restart</button>
+            <div className = "buttons">
+                <button onClick = {playerFirst} >you first</button>
+                <button onClick = {computerFirst}>computer first</button>
+            </div>
             <h2 className = "text">{status}</h2>
         </div>
     );
