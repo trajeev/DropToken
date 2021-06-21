@@ -1,3 +1,4 @@
+// This function calculates winner
 export const calculateWinner = (squares) => {
   const lines = [
     [0, 1, 2, 3],
@@ -20,6 +21,7 @@ export const calculateWinner = (squares) => {
   return null;
 }
 
+// This function calculates if the user is clicking on the right bubble or not.
 export const validityFunction = (squares, point) => {
   const coloumn = point % 4
   for (let i = 12 + coloumn; i >= 0; i -= 4) {
@@ -29,9 +31,10 @@ export const validityFunction = (squares, point) => {
   return true
 }
 
-export const computerMove = (square, point) => {
+// This function is used to place computer's move in the bottom of the row.
+export const computerMove = (squares, point) => {
   for (let i = 12 + point; i >= 0; i -=4) {
-    if (square[i] ===  null) return i
+    if (squares[i] ===  null) return i
   }
   return null
 }

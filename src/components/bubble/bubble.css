@@ -6,10 +6,10 @@
     cursor: pointer;
 }
 
-.-blue {
+.user {
     background-color: deepskyblue;
 }
 
-.-pink {
+.computer {
     background-color: deeppink;
 }

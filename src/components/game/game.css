@@ -6,19 +6,30 @@
 
 .button {
     height: 2rem;
-    width: 5rem;
+    width: 7rem;
     margin: auto;
-    
+    background-color: rgb(14 13 13 / 87%);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.text {
+.text, .buttons {
     margin: auto;
-    display: inline-block;
+    width: 12rem;
+    border-radius: 5px;
 }
 
-.buttons {
-    margin: auto;
+.user {
+    background-color: deepskyblue;
+    color: white;
 }
+
+.computer {
+    background-color: deeppink;
+    color: white;
+}
+
 
 button {
     margin-left: 10px;
