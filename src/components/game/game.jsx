@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './game.css'
 import Board from '../board/board'
-import {calculateWinner} from '../../helper'
+import {calculateWinner, validityFunction} from '../../helper'
 
 const Game = () => {
     const [markedArray, setArray] = useState(Array(16).fill(null))
@@ -15,10 +15,14 @@ const Game = () => {
 
     const handleClick = (point) => {
         const squares = [...markedArray]
-        if (calculateWinner(squares) || squares[point]) return
-        squares[point] = nextPlayer ? '-blue': '-pink'
-        setArray(squares)
-        setPlayer(!nextPlayer)
+        // console.log('coloumn is ',point%4, markedArray[point%4]);
+        // console.log(squares)
+        if (validityFunction(squares, point)) {
+            if (calculateWinner(squares) || squares[point]) return
+            squares[point] = nextPlayer ? '-blue': '-pink'
+            setArray(squares)
+            setPlayer(!nextPlayer)
+        }
     }
 
     const restart = () => {

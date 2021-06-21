@@ -20,4 +20,11 @@ export function calculateWinner(squares) {
     return null;
   }
 
-  
+  export const validityFunction = (squares, point) => {
+    const coloumn = point % 4
+    for (let i = 12 + coloumn; i >= 0; i -= 4) {
+      if (squares[i] === null && point < i) return false
+      else if (squares[i] === null && point === i) return true
+    }
+    return true
+  }
