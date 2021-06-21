@@ -5,7 +5,7 @@ const Bubble = ({onclick, colorChange}) => {
     return ( 
         <div 
             className = {`bubble  ${colorChange}`}
-            onClick = {() =>onclick()} 
+            onClick = {() => onclick()} 
         >
         </div>
     );
