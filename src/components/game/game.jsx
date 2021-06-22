@@ -89,8 +89,8 @@ const Game = () => {
                 markedArray = {markedArray} />
             <button onClick = {restart} className = "button">Restart</button>
             <div className = "buttons">
-                <button className = "user" onClick = {playerFirst} >you first</button>
-                <button className = "computer" onClick = {computerFirst}>computer first</button>
+                <button className = "user-button" onClick = {playerFirst} >you first</button>
+                <button className = "computer-button" onClick = {computerFirst}>computer first</button>
             </div>
             <h2 className = "text">{status}</h2>
         </div>

@@ -1,4 +1,9 @@
-.instructions {
-    margin-left: 50vh;
-
+body {
+    font-family: sans-serif;
 }
+
+
+.instructions {
+    text-align: center;
+}
+

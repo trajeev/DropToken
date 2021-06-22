@@ -14,23 +14,50 @@
     border-radius: 5px;
 }
 
+.button:hover {
+    border-color: black;
+    color: black;
+    background-color: white;
+}
+
 .text, .buttons {
     margin: auto;
-    width: 12rem;
     border-radius: 5px;
+    text-align: center;
+    border-color:white;
 }
 
-.user {
+.user-button {
     background-color: deepskyblue;
     color: white;
+    width: 6rem;
+    height: 2rem;
 }
 
-.computer {
+.user-button:hover {
+    border-color: deepskyblue;
+    color: deepskyblue;
+    background-color: white;
+}
+
+.computer-button {
     background-color: deeppink;
     color: white;
+    width: 7rem;
+    height: 2rem;
+}
+
+.computer-button:hover {
+    border-color: deeppink;
+    color: deeppink;
+    background-color: white;
 }
 
 
 button {
     margin-left: 10px;
+    border-color: white;
+    cursor: pointer;
+    border-radius: 5px
 }
+
