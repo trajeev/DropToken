@@ -5,13 +5,14 @@
 }
 
 .button {
-    height: 2rem;
-    width: 7rem;
+    height: 3rem;
+    width: 10rem;
     margin: auto;
     background-color: rgb(14 13 13 / 87%);
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    font-size: large
 }
 
 .button:hover {
@@ -27,11 +28,16 @@
     border-color:white;
 }
 
+.text::after{
+    color: deepskyblue;
+}
+
 .user-button {
     background-color: deepskyblue;
     color: white;
     width: 6rem;
     height: 2rem;
+    font-size: large;
 }
 
 .user-button:hover {
@@ -43,8 +49,9 @@
 .computer-button {
     background-color: deeppink;
     color: white;
-    width: 7rem;
+    width: 9rem;
     height: 2rem;
+    font-size: large
 }
 
 .computer-button:hover {
